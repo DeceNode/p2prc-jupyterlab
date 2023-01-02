@@ -1,0 +1,4 @@
+Author: Alister Luiz 
+Email: alister@decenode.com
+
+The following plugin allows a user to install and run JupyterLab. 
