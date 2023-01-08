@@ -8,12 +8,9 @@
       become: true
     
     
-    - name: Install JupyterLab
-      hosts: localhost
-      tasks:
-        - name: Install latest JupyterLab Environment
-          shell: "pip install --upgrade jupyterlab"
-          become: true
+    - name: Install latest JupyterLab Environment
+      shell: "pip install --upgrade jupyterlab"
+      become: true
 
     - name: start JupyterLab server
       shell: jupyter lab 
