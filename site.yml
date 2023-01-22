@@ -3,14 +3,7 @@
 - hosts: all
 
   tasks:
-    - name: Install PIP
-      shell: "apt-get -y install --reinstall python3-pip"
-      become: true
-    
-    
-    - name: Install latest JupyterLab Environment
-      shell: "pip install --upgrade jupyterlab"
-      become: true
-
-    - name: start JupyterLab server
-      shell: jupyter lab 
+    - name: Start JupyterLab Server Inside Anaconda Environment
+      shell: . /home/master/miniconda3/bin/activate && jupyter lab --ip=0.0.0.0 --port={{index . 0}}
+      async: 2592000               # 60*60*24*30 – 1 month (This will keep the following command running for a month
+      poll: 0
