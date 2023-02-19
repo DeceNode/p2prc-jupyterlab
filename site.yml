@@ -4,6 +4,6 @@
 
   tasks:
     - name: Start JupyterLab Server Inside Anaconda Environment
-      shell: . /home/master/miniconda3/bin/activate && jupyter lab --ip=0.0.0.0 --port={{index . 0}} --no-browser --NotebookApp.token='' --NotebookApp.password=''
+      shell: . /home/master/miniconda3/bin/activate && jupyter lab --allow-root --ip=0.0.0.0 --port={{index . 0}} --no-browser --NotebookApp.token='' --NotebookApp.password=''
       async: 2592000               # 60*60*24*30 – 1 month (This will keep the following command running for a month
       poll: 0
